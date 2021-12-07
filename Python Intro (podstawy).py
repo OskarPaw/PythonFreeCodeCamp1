@@ -145,3 +145,170 @@ while True:
 
 #print("ALL DONE")
 print(nun, tot, tot/nun)
+
+ # STRINGS
+name = input("Enter your name :")
+print("Your nick is :" + name)
+
+apple = input("Enter amount of apples :")
+
+#x = apple - 10
+#Traceback (most recent call last):
+# line 155, in <module>
+    #x = apple - 10
+#TypeError: unsupported operand type(s) for -: 'str' and 'int'
+
+# Raw input numbers must be converted from strings by int /float
+x = int(apple) - 10
+print(x)
+
+#           LOOKING INSIDE STRINGS
+
+fruit = "banana"
+letter = fruit[1] # square bracket chooses a letter in our string ( b-0, a-1, n-2, a-3 etc)
+print(letter) #a
+x = 3
+w = fruit[x - 1]
+print(w) #n
+
+#               GETTING LENGHT IN STRINGS
+
+frui = "banana"
+print(len(frui)) # 6
+
+#               LEN FUNCTION
+frui = "banana"
+x = len(frui)
+print(x) #6
+
+# banana ( a string input) ----> len(function) ----> 6 (a number output)
+# a function is some stored code. A function takes some input and produces an output.
+
+#              LOOPING THROUGH STRINGS
+# by while statement and an iteration variable and the len function, we can construct
+# a loop to look at each of the letters in a string individually
+
+fru = "banana"
+index = 0
+while index < len(fru): # from 0 to 5 couse lenght of word banana is 6
+    letter = fru[index] # taking letters from word banana
+    print(index, letter)
+    index = index + 1 # counting positions
+
+#for loop if you dont need counting
+
+fruit = "banana"
+for letter in fruit:
+    print(letter)
+
+#               LOOPING AND COUNTING STRINGS
+word = "banana"
+count = 0
+for letter in word:
+    if letter == "a":
+        count = count +1
+print(count)
+
+#               SLICING STRINGS
+#  second number is beyond the end of the slice - ###Up to but not including
+
+s = "Monty Python"
+print(s[0:4])
+print(s[4:7])
+print(s[7:20])
+print(s[:2]) # if we leave off the first number or the last number of the slice
+print(s[8:]) # its assumed to be the beginning or end of the string
+print(s[:])
+
+#               STRING CONCATENATION/ Łączenie stringów
+
+# when + operator is applied to strings it means concatenation
+a = "Hello"
+b = a + "There"
+print(b) #HelloThere
+
+c = a + " " + "There"
+print(c) #Hello There
+
+#               USING IN AS A LOGICAL OPERATOR STRING
+# The in expression is a logical expression that returns True or False and can be used in an if statement
+# The in keyword can also be used to check to see if one string is "in" another string
+
+fruit = "banana"
+#"n" in fruit
+#"m" in fruit
+#"nan" in fruit
+if "a" in fruit:
+    print("Just found A!")
+
+#                   STRING LIBRARY
+# there is a number of string functions which are in the string library
+# these functions are already built into every string - we invoke them by appending the funcion
+# to the string variabe for example : .lower
+
+print("Hi There" .lower()) #hi there
+
+# These functions do not modify the original string, instead they give us a new string which was changed
+
+greet = "Hello Hans"
+zap = greet.lower()
+print(zap) #hello hans
+print(greet) #Hello Hans
+
+# https://docs.python.org/3/library/stdtypes.html#string-methods all the string fuctions which are built in
+
+                    #SEARCHING A STRING
+# find() finds the first occurrence of the substring.String position starts at zero
+# if the substring is not fond , find() returns -1
+
+fruit = "banana"
+pos = fruit.find("na")
+print(pos) # 2
+
+aa = fruit.find("z")
+print(aa) # -1 due to not being able to find z letter
+
+#               MAKE EVERYTHING UPPER CASE STRINGS
+# you can make a copy of a string in lowe case or upper case
+
+greet = "Hello Hans"
+nnn = greet.upper()
+print(nnn)#HELLO HANS
+
+www = greet.lower()
+print(www)#hello hans
+
+#                           SEARCH AND REPLACE STRINGS
+# the replace() function is search and replace operation
+# it replaces all occurrences of the search string with the replacement string
+greet = "Hello  Bob"
+nstr = greet.replace("Bob", "Hans")
+print(nstr) #Hello Hans
+
+nstr = greet.replace("o","x")
+print(nstr)# Hellx Bxb
+
+#               STRIPPING WHITESPACE
+#lstrip() and rstrip() remove whitespace at the left or right
+#strip() removes both beginning and ending whitespace
+greet = "   Hello Bob   "
+greet.lstrip()  #"Hello Bob     "
+greet.rstrip()   #"   Hello Bob"
+greet.strip()   #"Hello Bob"
+
+#               PREFIXES STRINGS
+
+line = "Please have a nice day"
+line.startswith("Please") #True
+line.startswith("p") #False
+
+#               Parsing and Extracting
+data = "From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008"
+atpos = data.find("@")
+print(atpos) #21
+
+sppos = data.find(" ", atpos) #lk for a blank space
+print(sppos)#31
+
+host = data[atpos+1 : sppos]
+print(host) #uct.ac.za
