@@ -312,3 +312,72 @@ print(sppos)#31
 
 host = data[atpos+1 : sppos]
 print(host) #uct.ac.za
+
+#                                   READING FILES
+# Opening a file is done by open() function
+# We are using open() by : handle = open (filename,mode) for example fhand = open("mbox.txt", "r")
+# handle is a variable which let us hold a file and manipulate it
+# File name is a string
+# Mode is optional. R if we are planning to read the file , "w" if we're going to write to the file
+
+# NEWLINE IN FILES : \n
+# It indicate when a line ends.
+# Its a one character not two so if we used len command with \n in line its counted as one
+xyz = "Hello\nThere!"
+print(xyz)
+
+# Counting Lines in a File
+# Use a for loop to read each line
+#fhand = open("mbox.txt")
+#count = 0
+#for line in fhand:
+    #count = count + 1 # Count the lines and print out the number of lines
+#print("Line Count: ", count)
+
+# We can read the whole file into a single string
+# fhand = open("mbox-short.txt")
+# inp = fhand.read()
+# print(len(inp)) #number of characters in file
+# print(inp[:20]) # prints only 20 first characters not including last one (20)
+
+# Searching Through a File
+# we can put an if statement in our for loop to only print lines that meet some criteria
+# the newline is considered as a white space and is stripped by rstrip() string from the right
+# fhand = open("random-file.txt")
+# for line in fhand:
+#     line = line.rstrip()
+#     if line.startswitch("our criteria") :
+#          print(line)
+
+# Skipping with continue
+# we can conveniently skip a line by using the continue statement
+# fhan = open("random-file-fame.txt")
+# for line in fhand:
+#     line = line.rstrip()
+#     if not line.startswitch("From: ") :
+#         continue
+#     print(line)
+
+# Using in to select lines
+# we can look for a string anywhere in a line as our selection criteria
+# fhan = open("random-file-fame.txt")
+# for line in fhand:
+#     line = line.rstrip()
+#     if not "Thanks for your reply" in line : # if words in "" are not it the line, line will get skipped
+#          continue
+#     print(line)
+
+# Prompt for file name
+# with try and except there wont be an error if someone misstype file name
+# fname = input("Enter the file name: ")
+# try:
+#      fhand = open(fname)
+# except:
+#        print("File cannot be opened:", fname)
+#        quit()
+# count = 0
+# for line in fhand:
+#     if line.startswitch("Subject: ") :
+#         count = count +1
+# pirnt("There were", count, "subject lines in", fname)
+# it allows us to change file which we wanna check without coping a code
