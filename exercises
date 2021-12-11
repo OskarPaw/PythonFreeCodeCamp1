@@ -1,0 +1,11 @@
+str = 'X-DSPAM-Confidence: 0.8475'
+
+ipos = str.find(":")
+print(ipos)
+#piece = str[ipos:]  #: 0.8475
+piece = str[ipos+1:]
+print(piece)
+#print(piece + 42.0) you cant add things to str /typeError: can only concatenate str (not "float") to str
+value = float(piece)
+print(value)
+#print(value + 42.0) you can add things to fl
