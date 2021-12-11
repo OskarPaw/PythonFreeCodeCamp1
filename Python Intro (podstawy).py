@@ -313,7 +313,7 @@ print(sppos)#31
 host = data[atpos+1 : sppos]
 print(host) #uct.ac.za
 
-#                                   READING FILES
+#                                                                                READING FILES
 # Opening a file is done by open() function
 # We are using open() by : handle = open (filename,mode) for example fhand = open("mbox.txt", "r")
 # handle is a variable which let us hold a file and manipulate it
@@ -381,3 +381,116 @@ print(xyz)
 #         count = count +1
 # pirnt("There were", count, "subject lines in", fname)
 # it allows us to change file which we wanna check without coping a code
+
+#                                                                                   LISTS
+# What is not a collection
+# most of variables have one value in them - when we put a new value in the variable, the old value is overwritten
+# x = 2
+# x = 4
+# print(x) # 4
+
+# A List is a kind of Collection
+# collection allows us to put many values in a single "variable"
+# collection let us carry many values around in one convenient package
+# friend = [ "Hans", "Oskar", "Rajesh"]
+# a list element can be any Python object even another list
+
+# Lists and definite loops - best friends
+# x = ["Hans", "Oskar", "Rajesh"]
+# for z in x:
+#     print("Happy New Year:", z) # H N Y: H | # H N Y: O | # H N Y: R
+# print("Done!") # Done!
+
+# Looking inside lists
+# just like strings, we can get at any single element in a list using an index specified in square brackets[]
+# friends = ["Hans", "Oskar", "Rajesh"]
+# print(friends[1]) # Oskar
+
+# List are Mutable strings are Not
+# string are immutable - we cannot change the contents of a string - we must make a new string to make changes in it
+# fruit = "Banana"
+# fruit[0] = "b" # error "str" object does not support item assignment
+# x = fruit.lower() # were added a new variable x to modify it as we like
+# print(x) #banana
+# lists are mutable we can change an element of a list using the index[] operator
+# random number = [1, 2, 3, 4, 5]
+# print(random number) [1, 2, 3, 4, 5]
+# random number[2] = 28
+# print(random number) # [1, 2, 28, 4, 5]
+
+# How long is list
+# the len() function takes a list as a parameter and returns the number of in the list
+# greet = "Hello Hans"
+# print(len(greet)) #9 number of letters
+# len() tells us the number of elements of any set or sequence (such as a string)
+# x = [1, 2, "joe", 99]
+# print(len(x)) # 4 number of elements
+
+# Using the range function
+# range function returns a list of numbers that range from zero to one less than parameter
+# print(range(4)) # [0, 1, 2, 3]
+# friends = ["Hans", "Oskar", "Rajesh"]
+# print(len(friends)) #3
+# We can use construct an index loop using or and an integer iterator( iterator jest obiektem, który definiuje sposób wykonywania iteracji)
+# iteracja to proces pobierania jednego elementu na raz z rzędu elementów.
+# print(range(len(friends))) # [0, 1, 2]
+
+# 2 Loops way
+# If you dont need the position of object in a loop
+# friends = ["Hans", "Oskar", "Rajesh"]
+# for friend in friends :
+# print("Happy New Year:"), friend) # H N Y: H | # H N Y: O | # H N Y: R
+# If you need the position of object in a loop without gaps
+# for i in range (len(friends)):
+#     friend = friends[i]
+#     print("Happy New Year:", friend)
+
+# We can concatenate lists by using +
+# we create a new list by adding two existing lists together
+# a = [1, 2, 3]
+# b = [4, 5, 6]
+# c = a + b
+
+# Lists can be sliced using :
+# t = [9, 41, 12, 3, 74, 15]
+# t[1:3] # [41,12]
+# t[0:3] # [9, 41, 12]
+# t[:4] # [9 ,41, 12, 3]
+# just like in strings, the second number is " up to but not including"
+
+# Building a List from Scratch
+# we can create an empty list and then add elements using the append method 
+# the list stays in order and new elements are added at the end of the list
+# stuff = list()
+# stuff.append("book")
+# stuff.append(99)
+# print(stuff) # ["book", 99]
+# stuff.append("rice")
+# print(stuff) # ["book", 99, "rice"]
+
+# Is something in a List?
+# python have two operators that let us check if an item is in a list in /not in
+# these are logical operators that return True or False they don't modify the list
+# some = [1, 9, 21, 10, 16]
+# 9 in some #True
+# 15 in some #False
+# 20 not in some # True
+
+# List are in Order
+# a list can hold many items and keep them in order until we  do something to change the order
+# a list can be sorted - we can change its order
+# the sort method (unlike in strings)means sort yourself
+# friends = ["Oskar", "Hans", "Sally")
+# friends.sort()
+# print(friends)
+# print(friends[1])
+
+# Built-in Fuctions and Lists
+# there are numbers of functions built into python that take lists as parameters
+#nums = [3, 41, 12, 9, 74, 15]
+#print(len(nums)) #6
+#print(max(nums)) #74
+#print(min(nums)) #3
+#print(sum(nums)) #154
+#print(sum(nums)/len(nums)) #25.666666666666668
+
