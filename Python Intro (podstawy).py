@@ -494,3 +494,55 @@ print(xyz)
 #print(sum(nums)) #154
 #print(sum(nums)/len(nums)) #25.666666666666668
 
+# 2 Different ways to build loops to count max and min with functions by making lists
+# Less memory usage way
+# total = 0
+# count = 0
+# while True:
+#   inp = input("Enter a number: ")
+#   if inp == "done" : break
+#   value = float(inp)
+#   total = total + value
+#   count = count + 1
+# average = total / count
+# print("Average:", average)
+# More memory usage by creating a totaly new list by appending list
+# numlist = list()
+# while True:
+#   inp = input("Enter a number: ")
+#   if inp == "done" : break
+#   value = float(inp)
+#   numlist.append(value)
+# average = sum(numlist) / len(numlist)
+# print("Average", average)
+
+#                                                                               Strings and Lists
+# Split breaks a string into parts and produces a list of strings. We think of these as words.
+# we can access a particular word or lopp through all the words
+# abc = "With these words"
+# stuff = abc.split()
+# print(stuff) # ["With", "these", "words"]
+# print(len(stuff)) # 3
+# print(stuff[0]) # With
+#  Split deletes all blank spaces no matter how big they are
+# line = "A lot              of spaces"
+# etc = line.split()
+# print(etc) # ["A", "lot", "of", "spaces"]
+# When you don't specify a delimiter, multiple spaces are treated like one delimiter
+# you can specify what delimiter(ogranicznik) character to use in te splitting .split(";") for example
+# without delimiter below it coudn't delete blank spaces couse there were none
+# line = "first;second;third"
+# thing = line.split()
+# print(thing) # [first;second;third"]
+# print(len(thing)) # 1
+# With delimiter usage there is specification was we want to get rid of .split("smth we want to get rid of)")
+# thing = line.split(";")
+# print(thing) # ["first", "second", "third"]
+# print(len(thing)) # 3
+
+# The Double Split Pattern
+# From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008
+# words = line.split()
+# email = words[1] #stephen.marquard@uct.ac.za
+# pieces =  email.split("@") # ["stephen.marquard", "uct.ac.za"]
+# print(pieces[1]) # "uct.ac.za"
