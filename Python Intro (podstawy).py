@@ -546,3 +546,54 @@ print(xyz)
 # email = words[1] #stephen.marquard@uct.ac.za
 # pieces =  email.split("@") # ["stephen.marquard", "uct.ac.za"]
 # print(pieces[1]) # "uct.ac.za"
+
+#                           Python Dictionaries
+# Dictionaries are like a bag with random stuff in it but they are labeled but they have no order
+# lists are more organised than dictionaries
+# we index the things we put in the dictionary with a "lookup tag"
+# purse = dict()
+# purse["money"] = 12 #money is a label
+# purse["candy"] = 3 # candy is a label
+# purse["tissues"] = 75 # tissues is a label
+# print(purse) #{'money': 12, 'candy': 3, 'tissues': 75} # random order
+# print(purse["candy"]) # 3 # we can ask by using index operator[""] about what is in candy
+# print(purse["candy"]) = purse["candy"] + 2 # we can update stuff
+# print(purse) # {'money': 12, 'candy': 5, 'tissues': 75}
+# if we have some values like dict = {"Fri": 20, "Thu": 6, "Sat": 1} we can overwrite them by simply doing dict["Sat"] = 2
+
+# Dictionary literals(Constants)
+# dictionary literals use curly braces and have a list of key: value pairs
+# jjj = { "chuck" : 1, "fred" : 4}
+# print(jjj) # { "chuck" : 1, "fred" : 4}
+# you can make an empty dictionary using empty curly braces
+# ooo = { }
+# print{ooo} # {}
+
+# Comparing Lists and Dictionaries
+# lst = list()                         ddd = dict()
+# lst.append(2)                        ddd["age"] = 2
+# lst.append(180)                      ddd("course"] = 180
+# print(lst) # [2, 180]                print(ddd) # {course": 180, "age": 2)
+# lst[0] = 24                          ddd["age"] = 24
+# print(lst) # [ 24, 180]              print(ddd) # {course": 180, "age": 24}
+
+# When there is a new name in dictionary we need to add a new entry in a the dictionary
+# if this the second or later time we have seen the name we simply add one to the count in the dict under the name
+# counts = dict()
+# names = ["A", "B","C","A","B"]
+# for name in names:
+#   if name not in counts:
+#        counts[name] = 1
+#    else:
+#       counts[name] = counts[name]+ 1
+# print(counts)
+
+# The get method for dictionaries
+# method .get() the pattern of checking to see if a key is already in dict and assuming a deafult value
+# if the key is not there .
+# we can just simply type x = counts.get(name, 0)
+# instead of :
+# if name in counts:
+#    x = counts[name]
+# else:
+#     x = 0
