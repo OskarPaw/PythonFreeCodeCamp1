@@ -597,3 +597,34 @@ print(xyz)
 #    x = counts[name]
 # else:
 #     x = 0
+
+#                               Counting words in Text
+# Counting pattern - general pattern to count the words in a line of text is to split the line into words,
+# then loop through them and use a dictionary to track the count of each word independently
+# # even though dictionaries are not stored in order, we can write a for loop that goes through all the entries in dictionary
+# counts = dict()
+# print("Enter a line of text:") # the clown ran after the car and the car ran into the tent and the tent fell down
+# line = input("")
+# words = line.split()
+# print("Words:", words) # ['the', 'clown', 'ran', 'after', 'the', 'car', 'and', 'the', 'car', 'ran', 'into', 'the', 'tent', 'and', 'the', 'tent', 'fell', 'down']
+# for word in words:
+#    counts[word] = counts.get(word, 0) + 1
+# print("Counts", counts) #{'the': 5, 'clown': 1, 'ran': 2, 'after': 1, 'car': 2, 'and': 2, 'into': 1, 'tent': 2, 'fell': 1, 'down': 1}
+
+# Retrieving lists of Keys and Values
+# you can get a list of keys, values, or items(both) from dictionary
+# jjj = {"Hans": 1, "Fred": 42, "Himmler": 100}
+# print(list(jjj)) # ['Hans', 'Fred', 'Himmler']
+# print(jjj.keys()) # dict_keys(['Hans', 'Fred', 'Himmler'])
+# print(jjj.values()) # dict_values([1, 42, 100])
+# print(jjj.items()) # dict_items([('Hans', 1), ('Fred', 42), ('Himmler', 100)])
+
+# Two Iteration Variables
+# we loop through the key- value pairs ( { "Hans": 1} in a dictionary using "two" iteration variables
+# ech iteration, the first variable is the key and the second variable is the corresponding value fot tke key
+# jjj = {"Hans": 1, "Himmler": 100, "Fred": 42}
+# for a,b in jjj.items():
+#     print(a,b)
+# Hans 1
+# Himmler 100
+# Fred 42
