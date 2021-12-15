@@ -313,7 +313,7 @@ print(sppos)#31
 host = data[atpos+1 : sppos]
 print(host) #uct.ac.za
 
-#                                                                                READING FILES
+#                                                                                   READING FILES
 # Opening a file is done by open() function
 # We are using open() by : handle = open (filename,mode) for example fhand = open("mbox.txt", "r")
 # handle is a variable which let us hold a file and manipulate it
@@ -382,7 +382,7 @@ print(xyz)
 # pirnt("There were", count, "subject lines in", fname)
 # it allows us to change file which we wanna check without coping a code
 
-#                                                                                   LISTS
+#                                                                                              LISTS
 # What is not a collection
 # most of variables have one value in them - when we put a new value in the variable, the old value is overwritten
 # x = 2
@@ -547,7 +547,7 @@ print(xyz)
 # pieces =  email.split("@") # ["stephen.marquard", "uct.ac.za"]
 # print(pieces[1]) # "uct.ac.za"
 
-#                           Python Dictionaries
+#                                                                                    Python Dictionaries
 # Dictionaries are like a bag with random stuff in it but they are labeled but they have no order
 # lists are more organised than dictionaries
 # we index the things we put in the dictionary with a "lookup tag"
@@ -598,7 +598,7 @@ print(xyz)
 # else:
 #     x = 0
 
-#                               Counting words in Text
+#                                                                   Counting words in Text
 # Counting pattern - general pattern to count the words in a line of text is to split the line into words,
 # then loop through them and use a dictionary to track the count of each word independently
 # # even though dictionaries are not stored in order, we can write a for loop that goes through all the entries in dictionary
@@ -628,3 +628,55 @@ print(xyz)
 # Hans 1
 # Himmler 100
 # Fred 42
+
+#                                                                                   Tuples
+# Tuples are another kind of sequence that function much like a list
+# they have elements which are indexed starting at 0 , we use () instead of {}
+# x = ("Hans", "Himmler", "Fred")
+# print(x[2]) # Fred
+# y = (1, 8, 2)
+# print(y) #(1, 8, 2)
+# print(max(y)) # 8
+# for inter in y:
+#    print(inter) # 1| 8| 2|
+
+# Tuples are immutable /unchangeable
+# Unlike a list, once you create a tuple, you cannot alter it content - similar to a string
+# z = (5, 2, 1)
+# z[2] = 0
+# TypeError: 'tuple' object does not support item assignment
+# in str there is same stuff
+# y = "ABC"
+# y[2] = "D"
+# TypeError: 'str' object does not support item assignment
+
+# Thing not to do with tuples
+# x = (3, 2, 1)
+# x.sort() you can't sort it
+# x.append(5) you can't add things to tuple
+# x.reverse() you can't flip the order
+
+# Tuples are limited lists
+# we can use count , index on them
+# we use tuple when we wanna make a temporary list which we gonna delete later on couse its immutable
+
+# Tuples and Dictionaries
+# the items() method is dictionaries returns a list of (key, value) tuples
+# d = dict()
+# d["AA"] = 2
+# d["BA"] = 4
+# for (k,v) in d.items():
+#    print(k,v) #AA 2 | BA 4
+# tups = d.items()
+# print(tups) # dict_items([('AA', 2), ('BA', 4)])
+
+# Tuples are Comparable
+# the comparison operators <> work with tuples and other sequences if the first item is equal, python
+# goes on to the next element, and so on until it finds elements that differ without checking ones beyond it
+
+# Sorting Lists of Tuples
+# we can take advantage of the ability to sort a list of tuples to get a sorted version o a dictionary
+# first we sort the dictionary by they key using the items() method and sorted() function
+# dict = {"a": 10, "b": 1, "c": 22}
+# dict.items()
+# sorted(dict.items())
