@@ -678,5 +678,39 @@ print(xyz)
 # we can take advantage of the ability to sort a list of tuples to get a sorted version o a dictionary
 # first we sort the dictionary by they key using the items() method and sorted() function
 # dict = {"a": 10, "b": 1, "c": 22}
-# dict.items()
-# sorted(dict.items())
+# dict.items() #([('a', 10), ('c', 22), ('b', 1)])
+# sorted(dict.items()) #[('a', 10), ('b', 1), ('c', 22)]
+
+# Using sorted()
+# We can do this even more directly using the built-in function sorted that takes a sequence as a parameter and returns a sorted sequence
+# d = {'a':10, 'b':1, 'c':22}
+# t = sorted(d.items())
+# print(t) # [('a', 10), ('b', 1), ('c', 22)]
+# for k, v in sorted(d.items()):
+#    print(k, v) # a 10| b 1 | c 22
+
+# Sort by Values Instead of Key
+# we can construct a list of tuples of the form (value, key) so we can  sort by value
+# we do this with a for loop that creates a list of tuples
+# c = {'a':10, 'b':1, 'c':22}
+# tmp = list()
+# for k, v in c.items():
+#     tmp.append( (v, k) )
+# print(tmp) # [#(10, 'a'), (22, 'c'), (1, 'b')]
+# tmp = sorted(tmp, reverse=True)
+# print(tmp) ##[(22, 'c'), (10, 'a'), (1, 'b')]
+
+# How to print out top 10 most common words
+# fhand = open("random_file.txt")
+# counts = {}
+# for line in fhand:
+#     words = line.split()
+#     for word in words:
+#         counts[word] = counts.get(word, 0 ) + 1
+# lst = []
+# for key, val in counts.items():
+#     newtup = (val, key)
+#     lst.append(newtup)
+# lst = sorted(lst, reverse=True)
+# for val, key in lst[:10] :
+#     print(key, val)
