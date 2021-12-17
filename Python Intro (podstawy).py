@@ -714,3 +714,55 @@ print(xyz)
 # lst = sorted(lst, reverse=True)
 # for val, key in lst[:10] :
 #     print(key, val)
+
+#                                                                               Regular Expressions
+# clever “wild card” expressions for matching and parsing strings
+
+# Understanding Regular Expressions
+# very powerful and quite cryptic
+# regular expressions are a language unto themselves
+# a language of “marker characters” - programming with characters
+# it is kind of an “old school” language - compact
+
+# The Regular Expression Module
+# before you can use regular expressions in your program, you must import the library using “import re”
+# you can use re.search() to see if a string matches a regular expression, similar to using the find() method for strings
+# you can use re.findall() to extract portions of a string that match your regular expression, similar to a combination of find() and slicing:  var[5:10]
+
+# Regular Expression Quick Guide
+# ^        Matches the beginning of a line
+# $        Matches the end of the line
+# .        Matches any character
+# \s       Matches whitespace
+# \S       Matches any non-whitespace character
+# *        Repeats a character zero or more times
+# *?       Repeats a character zero or more times (non-greedy)
+# +        Repeats a character one or more times
+# +?       Repeats a character one or more times (non-greedy)
+# [aeiou]  Matches a single character in the listed set
+# [^XYZ]   Matches a single character not in the listed set
+# [a-z0-9] The set of characters can include a range
+# (        Indicates where string extraction is to start
+# )        Indicates where string extraction is to end
+
+# Using re.search() Like find()
+# hand = open('mbox-short.txt')   # hand = open('mbox-short.txt')
+# for line in hand:               # for line in hand:
+#     line = line.rstrip()        #     line = line.rstrip()
+#     if line.find('From:') >= 0: #     if re.search('From:', line) :
+#         print(line)             #  print(line)
+
+# Using re.search() Like startswith()
+# hand = open('mbox-short.txt')         # hand = open('mbox-short.txt')
+# for line in hand:                     # for line in hand:
+#     line = line.rstrip()              #     line = line.rstrip(
+#     if line.startswith('From:') :     #     if re.search('^From:', line) :
+#         print(line)                   # print(line)
+
+# Fine-Tuning Your Match
+# depending on how “clean” your data is and the purpose of your application, you may want to narrow your match down a bit
+# ^X-\S+:
+# ^  match the start of the line
+# \S match any non-whitespace character
+# + one or more times
+
