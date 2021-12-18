@@ -766,3 +766,54 @@ print(xyz)
 # \S match any non-whitespace character
 # + one or more times
 
+# Matching and Extracting data
+# re.search() returns a True/False depending on whether the string matches  the regular expression
+# if we actually want the matching strings to be extracted, we use re.findall()
+# [0-9]+ one or more digits
+# import re
+# x = 'My 2 favorite numbers are 19 and 42'
+# y = re.findall('[0-9]+',x)
+# print(y) # ['2', '19', '42']
+# if there is no match we will get empty list
+# import re
+# x = 'My 2 favorite numbers are 19 and 42'
+# y = re.findall('[0-9]+',x)
+# print(y) # ['2', '19', '42']
+# y = re.findall('[AEIOU]+',x) AEIOU in any of those in upper case
+# >>> print(y) # []
+
+# Warning: Greedy Matching
+# the repeat characters (* and +) push outward in both directions (greedy) to match the largest possible string
+# import re
+# x = 'From: Using the : character'
+# y = re.findall('^F.+:', x)
+# print(y) #['From: Using the :']
+#  ^F first character in the match is an F
+# : last character in the match is a :
+# .+ one or more characters
+
+# Non-Greedy Matching
+# not all regular expression repeat codes are greedy!  You have to add ? to make it not greedy
+# import re
+# x = 'From: Using the : character'
+# y = re.findall('^F.+?:', x)
+# print(y) # ['From:']
+# ^F first character in the match is an F
+# : last character in the match is a :
+# .+? one or more characters but not greedy
+
+# Fine-Tuning String Extraction
+# you can refine the match for re.findall() and separately determine which portion of the match is to be extracted by using parentheses
+# From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+# y = re.findall('\S+@\S+',x)
+# print(y) #['stephen.marquard@uct.ac.za’]
+# \S+@\S+ at least one non-whitespace character with @ in it
+
+# Fine-Tuning String Extraction
+# parentheses() are not part of the match - but they tell where to start and stop what string to extract
+# From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+# y = re.findall('\S+@\S+',x)
+# print(y) # ['stephen.marquard@uct.ac.za']
+# y = re.findall('^From (\S+@\S+)',x)
+# print(y)  # ['stephen.marquard@uct.ac.za']
+
