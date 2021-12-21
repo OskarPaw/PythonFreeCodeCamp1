@@ -817,3 +817,56 @@ print(xyz)
 # y = re.findall('^From (\S+@\S+)',x)
 # print(y)  # ['stephen.marquard@uct.ac.za']
 
+# String Parsing examples
+# data = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+# atpos = data.find('@')
+# print(atpos) # 21
+# sppos = data.find(' ',atpos)
+# print(sppos) # 31
+# host = data[atpos+1 : sppos]
+# print(host) # uct.ac.za
+
+# The Double Split Pattern
+# sometimes we split a line one way, and then grab one of the pieces of the line and split that piece again
+# From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
+# words = line.split()
+# email = words[1] #stephen.marquard@uct.ac.za
+# pieces = email.split('@') ['stephen.marquard', 'uct.ac.za']
+# print(pieces[1]) # 'uct.ac.za'
+
+# The Regex Version
+# import re
+# lin = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+# y = re.findall('@([^ ]*)',lin)
+# print(y) # ['uct.ac.za']
+# '@([^ ]*)'
+# @ - look through the string until you find an at sign
+# [^ ] - match non-blank character
+# * - match many of them
+# (  ) extract the non-blank characters
+
+# Even Cooler Regex Version
+# import re
+# lin = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+# y = re.findall('^From .*@([^ ]*)',lin)
+# print(y) # ['uct.ac.za']
+# '^From .*@([^ ]*)'
+# ^ - starting at the beginning of the line
+# From - look for the string 'From '
+# . * - skip a bunch of characters,
+# @ - looking for an at sign
+# ( - start extracting
+# [^ ] - match non-blank character
+# + - match many of them
+# ) - stop extracting
+
+# Escape Character
+# if you want a special regular expression character to just behave normally (most of the time) you prefix it with '\'
+# import re
+# x = 'We just received $10.00 for cookies.'
+# y = re.findall('\$[0-9.]+',x)
+# print(y) # ['$10.00']
+# \$[0-9.]+
+# \$ - look for a real dollar sign
+# [0-9.] - a digit or period
+# + - at least one or more
