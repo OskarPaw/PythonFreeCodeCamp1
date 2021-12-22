@@ -870,3 +870,29 @@ print(xyz)
 # \$ - look for a real dollar sign
 # [0-9.] - a digit or period
 # + - at least one or more
+
+#                                               Networked Programs
+# TCP Connections / Sockets
+# In computer networking, an Internet socket or network socket is an endpoint of a bidirectional inter-process communication flow across
+# an Internet Protocol-based computer network, such as the Internet
+# process ( browser xyz) <-- internet --> process ( random web site)
+
+# TCP Port Numbers
+# a port is an application-specific or process-specific software communications endpoint
+# it allows multiple networked applications to coexist on the same server
+# there is a list of well-known TCP port numbers (wikipedia)
+
+# Most Common TCP Ports
+# Telnet(23) - Login                        # IMAP (143/220/993) - Mail
+# SSH(22) - Secure Login                    # POP (109/110) - Mail Retrieval
+# HTTP(80) - talking to web server          # DNS (53) - Domain Name
+# SMTP (25) - (Mail)                        # FTP( 21) - File Transfer
+
+# Sockets in Python
+# python has built-in support for TCP Sockets
+# import socket
+# mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# mysock.connect( ('data.pr4e.org', 80) )
+# host - data.pr4e.org
+# port - 80
+# socket.SOCK_STREAM - series of characters which come one after another rather than block of series of text
