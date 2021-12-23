@@ -871,7 +871,7 @@ print(xyz)
 # [0-9.] - a digit or period
 # + - at least one or more
 
-#                                               Networked Programs
+#                                                           Networked Programs
 # TCP Connections / Sockets
 # In computer networking, an Internet socket or network socket is an endpoint of a bidirectional inter-process communication flow across
 # an Internet Protocol-based computer network, such as the Internet
@@ -896,3 +896,34 @@ print(xyz)
 # host - data.pr4e.org
 # port - 80
 # socket.SOCK_STREAM - series of characters which come one after another rather than block of series of text
+
+# Application Protocols
+# -  mail
+# -  world wide web
+
+# HTTP - Hypertext Transfer Protocol
+# the HyperText Transfer Protocol is the set of rules to allow browsers to retrieve web documents from servers over the Internet
+# the dominant Application Layer Protocol on the Internet
+# invented for the Web - to Retrieve HTML,  Images, Documents, etc.
+# extended to retrieve data in addition to documents - RSS, Web Services, etc.  Basic Concept - Make a Connection - Request a document - Retrieve the Document - Close the Connection
+
+# What is a Protocol?
+# a set of rules that all parties follow so we can predict each other’s behavior
+# and not bump into each other
+#  - on two-way roads in USA, drive on the right-hand side of the road
+#  - on two-way roads in the UK, drive on the left-hand side of the road
+# http://www.dr-chuck.com/page1.htm
+# http:// - protocol
+# www.dr-chuck.com/page1 - host
+# page1.htm - document
+
+# Getting Data From The Server
+# each time the user clicks on an anchor tag with an href= value to switch to a new page, the browser makes a connection
+# to the web server and issues a “GET” request - to GET the content of the page at the specified URL
+# the server returns the HTML document to the browser, which formats and displays the document to the user
+
+# Internet Standards
+# the standards for all of the Internet protocols (inner workings) are developed by an organization
+# internet Engineering Task Force (IETF)
+# www.ietf.org
+# standards are called “RFCs” - “Request for Comments
