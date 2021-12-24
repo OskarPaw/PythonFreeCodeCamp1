@@ -927,3 +927,41 @@ print(xyz)
 # internet Engineering Task Force (IETF)
 # www.ietf.org
 # standards are called “RFCs” - “Request for Comments
+
+# # Writing a web browser
+# an HTTP Request in Python
+# import socket
+#
+# mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# mysock.connect(('data.pr4e.org', 80))
+# cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\r\n\r\n'.encode()
+# mysock.send(cmd)
+#
+# while True:
+#     data = mysock.recv(512)
+#     if (len(data) < 1):
+#         break
+#     print(data.decode(),end='') # we have to decode in order to be able to print text
+# mysock.close()
+
+# HTTP Header
+# HTTP/1.1 200 OK
+# Date: Sun, 14 Mar 2010 23:52:41 GMT
+# Server: Apache
+# Last-Modified: Tue, 29 Dec 2009 01:31:22 GMT
+# ETag: "143c1b33-a7-4b395bea"
+# Accept-Ranges: bytes
+# Content-Length: 167
+# Connection: close
+# Content-Type: text/plain
+# all above is a header
+# there is always a blank space between Header and body ( the actual text or image)
+# while True:
+#     data = mysock.recv(512)
+#     if ( len(data) < 1 ) :
+#         break
+#     print(data.decode()) # all below is decoded stuff ( HTTP body)
+# but soft what light through yonder window breaks
+# it is the east and Juliet is the sun
+# arise fair sun and kill the envious moon
+# who is already sick and pale with grief
