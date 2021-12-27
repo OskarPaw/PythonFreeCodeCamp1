@@ -1028,3 +1028,26 @@ print(xyz)
 # fhand = urllib.request.urlopen('http://www.dr-chuck.com/page1.htm')
 # for line in fhand:
 #     print(line.decode().strip())
+
+# What is Web Scraping?
+# when a program or script pretends to be a browser and retrieves web pages, looks at those web pages, extracts information, and then looks at more web pages
+# search engines scrape web pages - we call this “spidering the web” or “web crawling”
+
+# Why Scraping ?
+# pull data - particularly social data - who links to who?
+# get your own data back out of some system that has no “export capability”
+# monitor a site for new information
+# spider the web to make a database for a search engine
+
+# Scraping Web Pages
+# there is some controversy about web page scraping and some sites are a bit snippy about it.
+# republishing copyrighted information is not allowed
+# violating terms of service is not allowed
+# import urllib.request, urllib.parse, urllib.error
+# from bs4 import BeautifulSoup
+# url = input('Enter - ')
+# html = urllib.request.urlopen(url).read()
+# soup = BeautifulSoup(html, 'html.parser')
+# tags = soup('a') # Retrieve all of the anchor tags
+# for tag in tags:
+#     print(tag.get('href', None))
