@@ -1051,3 +1051,31 @@ print(xyz)
 # tags = soup('a') # Retrieve all of the anchor tags
 # for tag in tags:
 #     print(tag.get('href', None))
+
+# #                                                   Web Services
+# Data on the web
+# with the HTTP Request/Response well understood and well supported, there was a natural move toward exchanging data between programs using these protocols
+# we needed to come up with an agreed way to represent data going between applications and across networks
+# there are two commonly used formats: XML and JSON
+
+# Agreeing on a “Wire Format”
+# XML format example
+# Python Dictionary ---------> data
+# <person>       #   serialize
+#    <name>
+#       Chuck
+#    </name>
+#    <phone>
+#       303 4456
+#    </phone>
+# </person>
+#  ------------> Java HashMap
+#   De-Serialize
+# JSON format example (JavaScript Object Notation) mostly used in API (interfejsy programowania aplikacji)
+# Python Dictionary ---------> data
+# {                 #serialize
+#   "name" :  "Chuck",
+#   "phone" :  "303-4456"
+# }
+# ------------>Java HashMap
+# De-Serialize
