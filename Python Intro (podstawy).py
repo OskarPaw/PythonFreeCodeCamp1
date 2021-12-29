@@ -1052,7 +1052,7 @@ print(xyz)
 # for tag in tags:
 #     print(tag.get('href', None))
 
-# #                                                   Web Services
+# #                                                                          Web Services
 # Data on the web
 # with the HTTP Request/Response well understood and well supported, there was a natural move toward exchanging data between programs using these protocols
 # we needed to come up with an agreed way to represent data going between applications and across networks
@@ -1079,3 +1079,44 @@ print(xyz)
 # }
 # ------------>Java HashMap
 # De-Serialize
+
+#  XML - eXtensible Markup Language
+# marking up data to send across the network
+# primary purpose is to help information systems share structured data
+# it started as a simplified subset of the Standard Generalized Markup Language (SGML), and is designed to be relatively human-legible
+
+# XML “Elements” (or Nodes)
+# <people>
+#     <person>
+#        <name>Chuck</name>      # Simple Element
+#        <phone>303 4456</phone> # Simple Element
+#     </person>
+#     <person>                   # Complex Element
+#        <name>Noah</name>       # Complex Element
+#        <phone>622 7421</phone> # Complex Element
+#     </person>                  # Complex Element
+# </people>
+
+# XML Terminology
+# tags indicate the beginning and ending of elements
+# attributes - Keyword/value pairs on the opening tag of XML
+# serialize / de-serialize - Convert data in one program into a common format that can be stored and/or transmitted between systems in a programming language-independent manner
+
+# XML Basics
+# start tag : <person>,<name>,<phone     >
+# end Tag : </name>, </phone>,</person>
+# text Content : Chuck,+1 734 303 4456
+# attribute : type="intl", hide="yes"
+# self Closing Tag :<email      />
+# <person>
+#   <name>Chuck</name>
+#   <phone type="intl">
+#      +1 734 303 4456
+#    </phone>
+#    <email hide="yes" />
+# </person>
+
+# White space in xml
+# line ends do not matter.
+# white space is generally discarded on text elements,we indent only to be readable.
+
