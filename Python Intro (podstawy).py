@@ -1120,3 +1120,56 @@ print(xyz)
 # line ends do not matter.
 # white space is generally discarded on text elements,we indent only to be readable.
 
+# XML Schema
+# describing a “contract” as to what is acceptable XML
+# description of the legal format of an XML document
+# expressed in terms of constraints on the structure and content of documents
+# often used to specify a “contract” between systems - “My system will only accept XML that conforms to this particular Schema.”
+# if a particular piece of XML meets the specification of the Schema - it is said to “validate”
+
+# Many XML Schema Languages
+# document Type Definition (DTD)
+# standard Generalized Markup Language (ISO 8879:1986 SGML)
+# XML Schema  from W3C - (XSD) # most popular nowadays
+
+# XSD Structure
+# <person>
+#    <lastname>Severance</lastname>
+#    <age>17</age>
+#    <dateborn>2001-04-17</dateborn>
+# </person>
+# xs:element : <lastname>Severance</lastname>,<age>17</age>,<dateborn>2001-04-17</dateborn>
+# xs:complexType : <person>,</person>
+#
+# <xs:complexType name=”person”>
+#   <xs:sequence>
+#     <xs:element name="lastname" type="xs:string"/>
+#     <xs:element name="age" type="xs:integer"/>
+#     <xs:element name="dateborn" type="xs:date"/>
+#   </xs:sequence>
+# </xs:complexType>
+# xs:element :<xs:element name="lastname" type="xs:string"/>,<xs:element name="age" type="xs:integer"/>,<xs:element name="dateborn" type="xs:date"/>
+# xs:sequence: <xs:sequence>,</xs:sequence>
+# xs:complexType: <xs:complexType name=”person”>,</xs:complexType>
+
+# Getting more than 1 object( in this example user)
+#import xml.etree.ElementTree as ET
+#input = '''<stuff>
+#    <users>
+#        <user x="2">
+#            <id>001</id>
+#            <name>Chuck</name>
+#        </user>
+#        <user x="7">
+#            <id>009</id>
+#            <name>Brent</name>
+#        </user>
+#    </users>
+#</stuff>'''
+# stuff = ET.fromstring(input)
+# lst = stuff.findall('users/user') # creating list
+# print('User count:', len(lst))    # getting number of objects in a list
+# for item in lst:                  # creating for loop to get specific data
+#    print('Name', item.find('name').text)
+#    print('Id', item.find('id').text)
+#    print('Attribute', item.get("x"))
