@@ -1173,3 +1173,54 @@ print(xyz)
 #    print('Name', item.find('name').text)
 #    print('Id', item.find('id').text)
 #    print('Attribute', item.get("x"))
+
+# JavaScript Object Notation/JSON
+# better for pulling out data from the system and moving it betw 2 systems with minimum fuss
+# JSON represents data as nested “lists” and “dictionaries”
+
+# Example 1 just a single dictionary
+# import json
+# data = '''{
+#  "name" : "Chuck",
+#  "phone" : {
+#    "type" : "intl",
+#    "number" : "+1 734 303 4456"
+#   },
+#   "email" : {
+#     "hide" : "yes"
+#   }
+# }'''
+# info = json.loads(data) # info is a dict which we created
+# print('Name:',info["name"])
+# print('Hide:',info["email"]["hide"])
+
+# Example 2, list [] with 2 dict in it
+# import json
+# input = '''[
+#   { "id" : "001",
+#     "x" : "2",
+#     "name" : "Chuck"
+#   } ,
+#   { "id" : "009",
+#     "x" : "7",
+#     "name" : "Chuck"
+#   }
+# ]'''
+#
+# info = json.loads(input) # list
+# print('User count:', len(info)) # user number
+# for item in info:
+#     print('Name', item['name'])
+#     print('Id', item['id'])
+#     print('Attribute', item['x'])
+
+# Service Oriented Approach
+# most non-trivial web applications use services
+# they use services from other applications for example :
+# -  credit card charge
+# -  hotel reservation systems
+# services publish the “rules” applications must follow to make use of the service (API)
+
+# Multiple Systems
+# initially - two systems cooperate and split the problem
+# as the data/service becomes useful - multiple applications want to use the information / application
