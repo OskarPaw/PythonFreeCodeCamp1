@@ -1224,3 +1224,18 @@ print(xyz)
 # Multiple Systems
 # initially - two systems cooperate and split the problem
 # as the data/service becomes useful - multiple applications want to use the information / application
+
+# Web Services: APIs - Application Program Interface:
+# - the API itself is largely abstract in that it specifies an interface and controls the behavior of the objects
+# - specified in that interface. The software that provides the functionality described by an API is said to be an
+# - “implementation” of the API.  An API is typically defined in terms of the programming language used to build an application.
+
+# API Security and Rate Limiting
+# the compute resources to run these APIs are not “free”
+# the data provided by these APIs is usually valuable
+# the data providers might limit the number of requests per day, demand an API “key”, or even charge for usage
+# they might change the rules as things progress
+
+
+
+
