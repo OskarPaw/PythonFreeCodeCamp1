@@ -1235,7 +1235,10 @@ print(xyz)
 # the data provided by these APIs is usually valuable
 # the data providers might limit the number of requests per day, demand an API “key”, or even charge for usage
 # they might change the rules as things progress
-
+# service Oriented Architecture - allows an application to be broken into parts and distributed across a network
+# an Application Program Interface (API) is a contract for interaction
+# web Services provide infrastructure for applications cooperating (an API) over a network - SOAP and REST are two styles of web services
+# XML and JSON are serialization format
 
 
 
