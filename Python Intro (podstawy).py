@@ -1240,5 +1240,42 @@ print(xyz)
 # web Services provide infrastructure for applications cooperating (an API) over a network - SOAP and REST are two styles of web services
 # XML and JSON are serialization format
 
+#                                                                              Python Object Oriented
+# a program is made up of many cooperating objects
+# instead of being the “whole program” - each object is a little “island” within the program and cooperatively working with other objects
+# a program is made up of one or more objects working together - objects make use of each other’s capabilities
+# input -------> process ---------> output
 
+# Object
+# an Object is a bit of self-contained Code and Data
+# a key aspect of the Object approach is to break the problem into smaller understandable parts (divide and conquer)
+# objects have boundaries that allow us to ignore un-needed detail
+# we have been using objects all along: String Objects, Integer Objects, Dictionary Objects, List Objects
+# objects get created and used
+# input -------> object/string/dict/ object ---------> output
+# objects are bits of code and data input -------> Code-Data/Code-Data/Code-Data/ Code-Data ---------> output
+# objects hide detail - they allow us to ignore the detail of the “rest of the program”.
+# objects hide detail - they allow the “rest of the program” to ignore the detail about “us”.
+
+# Definitions
+# class - a template- dog .defines and shapes the nature of the class
+# object or Instance - A particular instance of a class. They are made from class
+# method or Message - A defined capability of a class - bark().A function that lives within a class
+# field or attribute- A bit of data in a class- lenght. A variables which define a class
+
+# Terminology: Class
+# defines the abstract characteristics of a thing (object), including the thing's characteristics
+# (its attributes, fields or properties) and the thing's behaviors (the things it can do, or methods, operations or features).
+# one might say that a class is a blueprint or factory that describes the nature of something. For example,
+# the class Dog would consist of traits shared by all dogs, such as breed and fur color (characteristics), and the ability to bark and sit (behaviors).
+
+# Terminology: Instance
+# one can have an instance of a class or a particular object. The instance is the actual object created at runtime.
+# in programmer jargon, the Lassie object is an instance of the Dog class. The set of values of the attributes of a particular object is called its state.
+# the object consists of state and the behavior that's defined in the object's class.
+
+# Terminology: Method
+# an object's abilities. In language, methods are verbs. Lassie, being a Dog, has the ability to bark.
+# so bark() is one of Lassie's methods. She may have other methods as well, for example sit() or eat() or walk() or save_timmy().
+# within the program, using a method usually affects only one particular object; all Dogs can bark, but you need only one particular dog to do the barking
 
