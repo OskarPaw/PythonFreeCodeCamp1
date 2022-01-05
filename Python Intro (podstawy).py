@@ -1279,3 +1279,34 @@ print(xyz)
 # so bark() is one of Lassie's methods. She may have other methods as well, for example sit() or eat() or walk() or save_timmy().
 # within the program, using a method usually affects only one particular object; all Dogs can bark, but you need only one particular dog to do the barking
 
+# A Sample Class
+# class PartyAnimal:                # this is the template for making PartyAnimal objects
+#     x = 0                         # each PartyAnimal object has a bit of data
+#     def party(self):              # each PartyAnimal object has a bit of code
+#         self.x = self.x + 1
+#         print("So far", self.x)
+#
+# an = PartyAnimal()                # construct a PartyAnimal object and store in an
+#
+# an.party()                        # tell the an object to run the party() code within it
+# an.party()
+# an.party()
+
+# Playing with dir() and type()
+# the dir()/help() command lists capabilities
+# ignore the ones with underscores - these are used by Python itself
+# the rest are real operations that the object can perform
+# it is like type() - it tells us something *about* a variable
+# class PartyAnimal:
+#    x = 0
+#
+#    def party(self) :
+#      self.x = self.x + 1
+#      print("So far",self.x)
+#
+# an = PartyAnimal()
+#
+# print("Type", type(an)) # Type <class '__main__.PartyAnimal'>
+# print("Dir ", dir(an))  # Dir  ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'party', 'x']
+# we can use dir() to find the “capabilities” of our newly created class.
+
