@@ -1310,3 +1310,60 @@ print(xyz)
 # print("Dir ", dir(an))  # Dir  ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'party', 'x']
 # we can use dir() to find the “capabilities” of our newly created class.
 
+#  Object Lifecycle
+# they are created, used, and discarded
+# we have special blocks of code (methods) that get called
+# -  at the moment of creation (constructor)
+# -  at the moment of destruction (destructor)
+# constructors are used a lot
+# destructors are seldom used
+
+# Constructor
+# the primary purpose of the constructor is to set up some instance variables to have the proper initial values when the object is created
+# class PartyAnimal:
+#    x = 0
+#
+#    def __init__(self):
+#      print('I am constructed')#I am constructed
+#
+#    def party(self) :
+#      self.x = self.x + 1
+#      print('So far',self.x)
+#
+#    def __del__(self):
+#      print('I am destructed', self.x)#I am destructed 2
+#
+# an = PartyAnimal()
+# an.party()# So far 1
+# an.party()# So far 2
+# an = 42                   #  we can overwrite smth
+# print('an contains',an) # an contains 42
+# the constructor and destructor are optional.
+# the constructor is typically used to set up variables. The destructor is seldom used.
+
+# Many Instances
+# we can create lots of objects - the class is the template for the object
+# we can store each distinct object in its own variable
+# we call this having multiple instances of the same class
+# each instance has its own copy of the instance variables
+# class PartyAnimal:
+#    x = 0
+#    name = ""
+#    def __init__(self, z):
+#      self.name = z
+#      print(self.name,"constructed") # Sally constructed | Jim constructed
+#
+#    def party(self) :
+#      self.x = self.x + 1
+#      print(self.name,"party count",self.x)
+#
+# s = PartyAnimal("Sally")
+# j = PartyAnimal("Jim")
+#
+# s.party()#Sally party count 1
+# j.party()#Jim party count 1
+# s.party()#Sally party count 2
+# we have two independent instances s and j
+# constructors can have additional parameters.
+# these can be used to set up instance variables for the particular instance of the class (i.e., for the particular object).
+
