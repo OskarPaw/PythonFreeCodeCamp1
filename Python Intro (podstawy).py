@@ -1367,3 +1367,41 @@ print(xyz)
 # constructors can have additional parameters.
 # these can be used to set up instance variables for the particular instance of the class (i.e., for the particular object).
 
+#  Inheritance
+# when we make a new class - we can reuse an existing class and inherit all the capabilities of an existing class and then add our own little bit to make our new class
+# another form of store and reuse
+# write once - reuse many times
+# the new class (child) has all the capabilities of the old class (parent) - and then some more
+
+# Terminology: Inheritance
+# subclasses’ are more specialized versions of a class, which inherit attributes and behaviors from their parent classes, and can introduce their own
+# class PartyAnimal:
+#    x = 0
+#    name = ""
+#    def __init__(self, nam):
+#      self.name = nam
+#      print(self.name,"constructed")
+#
+#    def party(self) :
+#      self.x = self.x + 1
+#      print(self.name,"party count",self.x)
+#
+# class FootballFan(PartyAnimal):
+#    points = 0
+#    def touchdown(self):
+#       self.points = self.points + 7
+#       self.party()
+#       print(self.name,"points",self.points)
+# FootballFan is a class which extends PartyAnimal. It has all the capabilities of PartyAnimal and more.
+
+# Definitions
+# class - a template
+# attribute – A variable within a class
+# method - A function within a class
+# object - A particular instance of a class
+# constructor – Code that runs when an object is created
+# inheritance - The ability to extend a class to make a new class
+
+# Summary
+# Object Oriented programming is a very structured approach to code reuse
+# we can group data and functionality together and create many independent instances of a class
