@@ -1,0 +1,63 @@
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup as bs
+import requests
+
+# loading the webpage content
+r = requests.get("https://keithgalli.github.io/web-scraping/example.html")
+
+# converting to a beautiful soup object
+soup = bs(r.content)
+
+# printing out prettier version of our html by using .prettify
+print(soup.prettify())
+
+first_header = soup.find("h2").text
+
+headers = soup.find_all("h2") # creating list of all h2 not a single element
+print(headers)
+
+# pass in a list of elements to look for
+first_header = soup.find(["h1","h2"]) # it passes first element which it finds
+print(first_header)
+
+allheaders = soup.find_all(["h1", "h2"]) # it passes all elements with h1/h2
+print(allheaders)
+
+# Passing in attributes to the find/find_all function it helps us narrow crapping
+paragraph = soup.find_all("p", attrs={"id": "paragraph-id"}) # by attribute we can use dictionary mapping to find specific thing in code
+print(paragraph)
+
+# Its possible to nest find/find_all calls
+body = soup.find("body")
+print(body)
+div = body.find("div")
+print(div)
+header = div.find("h1")
+print(header)
+
+# we can search specific strings in our find/find_all calls
+import re
+
+paragraphs = soup.find_all("p", string=re.compile("Some "))
+print(paragraphs)
+
+headers = soup.find_all("h2", string=re.compile("(H|h)eader"))
+print(headers)
+
+# select (CSS selector)  https://www.w3schools.com/cssref/css_selectors.asp
+
+content = soup.select("p")
+print(content)
+print(soup.body.prettify())
+
+paragraphs = soup.select("h2 ~ p") # everything after h2 which is nested in a same place
+print(paragraphs)
+
+bold_text = soup.select("p#paragraph-id b")
+print(bold_text)
+
+paragraphs = soup.select("body > p")
+print(paragraphs)
+for paragraph in paragraphs:
+    print(paragraph.select("i"))
+#25 min
