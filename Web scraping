@@ -61,3 +61,26 @@ print(paragraphs)
 for paragraph in paragraphs:
     print(paragraph.select("i"))
 #25 min
+
+#                                                                           Get different properties of the HTML
+# use .string
+header = soup.find("h2")
+print(header.string)
+
+# if multiple child elements use get_text
+div = soup.find("div")
+print(div.prettify())
+#print(div.string) # if string outcome is none use div.get_text()
+print(div.get_text())
+
+# Get a specific property from an element
+Link = soup.find("a")
+print(Link)
+print(Link["href"]) # to only get a link
+
+#                                                                                    Code Navigation
+# Path Syntax
+print(soup.body) #
+
+# Terms: Parent, Sibling, Child
+print(soup.body.find("div").find_next_siblings())
