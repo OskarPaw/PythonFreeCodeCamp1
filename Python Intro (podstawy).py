@@ -1443,3 +1443,30 @@ print(xyz)
 # -  SqlServer - Very nice - from Microsoft (also Access)
 # many other smaller projects, free and open source
 # -  HSQL, SQLite, Postgres
+
+#  Making a Database
+# creating a single table
+# CREATE TABLE "Users" ("name" TEXT, "email" TEXT)
+
+# SQL: Insert
+# the Insert statement inserts a row into a table
+# INSERT INTO Users (name, email) VALUES ('Kristin', 'kf@umich.edu')
+
+# SQL: Delete
+# deletes a row in a table based on selection criteria
+# DELETE FROM Users WHERE email='ted@umich.edu'
+
+# SQL: Update
+# allows the updating of a field with a where clause
+# UPDATE Users SET name='xyz' WHERE email='csev@umich.edu'
+
+# Retrieving Records: Select
+# the select statement retrieves a group of records - you can either retrieve all the records or a subset of the records with a WHERE clause
+# SELECT * FROM Users
+# SELECT * FROM Users WHERE email='csev@umich.edu'
+
+# Sorting with ORDER BY
+# you can add an ORDER BY clause to SELECT statements to get the results sorted in ascending or descending order
+# SELECT * FROM Users ORDER BY email
+# SELECT * FROM Users ORDER BY name DESC
+
