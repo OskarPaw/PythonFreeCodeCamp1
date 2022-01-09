@@ -1470,3 +1470,19 @@ print(xyz)
 # SELECT * FROM Users ORDER BY email
 # SELECT * FROM Users ORDER BY name DESC
 
+# Complex Data Models and  Relationships
+# Database Design
+# database design is an art form of its own with particular skills and experience
+# our goal is to avoid the really bad mistakes and design clean and easily understood databases
+# others may performance tune things later
+# database design starts with a picture...
+
+# Building a Data Model
+# drawing a picture of the data objects for our application and then figuring out how to represent the objects and their relationships
+# basic rule: Don’t put the same string data in twice - use a relationship instead
+# when there is one thing in the “real world” there should be one copy of that thing in the database
+
+# For each “piece of info”
+# is the column an object or an attribute of another object?
+# once we define objects, we need to define the relationships between objects
+
