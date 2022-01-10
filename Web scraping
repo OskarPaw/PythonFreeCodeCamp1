@@ -84,3 +84,53 @@ print(soup.body) #
 
 # Terms: Parent, Sibling, Child
 print(soup.body.find("div").find_next_siblings())
+
+#                                                                                    exercises
+from typing import Any
+
+import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup as bs
+import requests
+r = requests.get("https://keithgalli.github.io/web-scraping/webpage.html")
+webpage = bs(r.content)
+#print(webpage.prettify())
+
+#                                                                                  Getting all socials
+all_socials = webpage.find_all("ul", attrs={"ul","socials"})
+print(all_socials)
+
+all_socials2 = webpage.select("ul.socials a")
+actual_links = [link["href"] for link in all_socials2]
+print(actual_links)
+
+print(webpage.body.find("ul").find_next_sibling().find_next_sibling().find_next_sibling())
+
+all_socials3 = webpage.select("li.social a")
+actual_links = [link["href"] for link in all_socials3]
+print(actual_links)
+
+#                                                                       grabbing all fun facts that use "is"
+import re
+facts = webpage.select("ul.fun-facts li")
+facts_with_is = [fact.find(string=re.compile("is")) for fact in facts]
+facts_with_is = [fact.find_parent().get_text() for fact in facts_with_is if fact]   # to dont get None: fact for fact in facts_with_is if fact
+print(facts_with_is)
+
+#                                                                                  downloading an image
+import requests 
+from bs4 import BeautifulSoup as bs 
+
+# Load the webpage content
+url = "https://keithgalli.github.io/web-scraping/"
+r = requests.get(url+"webpage.html")
+
+# Convert to a beautiful soup object
+webpage = bs(r.content)
+
+images = webpage.select("div.row div.column img")
+image_url = images[0]['src']
+full_url = url + image_url
+
+img_data = requests.get(full_url).content  # stackoverflow
+with open('lake_como.jpg', 'wb') as handler:
+    handler.write(img_data)
