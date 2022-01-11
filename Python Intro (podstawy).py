@@ -1486,3 +1486,32 @@ print(xyz)
 # is the column an object or an attribute of another object?
 # once we define objects, we need to define the relationships between objects
 
+# Representing Relationships in a Database
+# Database Normalization (3NF)
+# there is *tons* of database theory - way too much to understand without excessive predicate calculus
+# do not replicate data - reference data - point at data
+# use integers for keys and for references
+# add a special “key” column to each table which we will make references to.
+# by convention, many programmers call this column “id”
+
+# Integer Reference Pattern
+# we use integers to reference rows in another table
+
+# Three Kinds of Keys
+# primary key - generally an integer auto-increment field | id
+# logical key - What the outside world uses for lookup    | tittle
+# foreign key - generally an integer key pointing to a row in another table |artist_id
+
+# Key Rules
+# never use your logical key as the primary key
+# logical keys can and do change, albeit slowly
+# relationships that are based on matching string fields are less efficient than integers
+
+# Foreign Keys
+# a foreign key is when a table has a column that contains a key which points to the primary key of another table.(artist_id)
+# artist            # album
+# id                # id
+# name              # title
+                    # artist_id
+# when all primary keys are integers, then all foreign keys are integers - this is good - very good
+
