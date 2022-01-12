@@ -1515,3 +1515,9 @@ print(xyz)
                     # artist_id
 # when all primary keys are integers, then all foreign keys are integers - this is good - very good
 
+# Relationship Building (in tables)
+# INSERT command : It defines a new row by listing the fields we want to include followed by the values we want placed in the new row.
+# every table have a primary key
+# we have duplication in our data
+# we are duplicating the relationships
+# we are not duplicating the data itself instead we are duplicating little integer numbers
