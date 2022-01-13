@@ -1,4 +1,4 @@
-import sys
+          import sys
 
 x = 2
 print(x)
@@ -1521,3 +1521,36 @@ print(xyz)
 # we have duplication in our data
 # we are duplicating the relationships
 # we are not duplicating the data itself instead we are duplicating little integer numbers
+
+# Using JOIN Across Tables
+
+# Relational power
+# by removing the replicated data and replacing it with references to a single copy of each bit of data we build a “web” of information
+# the relational database can read through very quickly - even for very large amounts of data
+# often when you want some data it comes from a number of tables linked by these foreign keys
+
+# The JOIN Operation
+# the JOIN operation links across several tables as part of a select operation
+# you must tell the JOIN how to use the keys that make the connection between the tables using an ON clause
+# when using a JOIN clause in SQL statement , ON indicates how the two of the tables are to be joined
+
+# Many-To-Many Relationships
+# sometimes we need to model a relationship that is many-to-many
+# we need to add a "connection" table with two foreign keys
+# there is usually no separate primary
+
+# Complexity Enables Speed
+# complexity makes speed possible and allows you to get very fast results as the data size grows
+# by normalizing the data and linking it with integer keys, the overall amount of data which the relational database must scan is far lower than if the data were simply flattened out
+# it might seem like a tradeoff - spend some time designing your database so it continues to be fast when your application is a success
+
+# Additional SQL Topics
+# indexes improve access performance for things like string fields
+# constraints on data - (cannot be NULL, etc..)
+# transactions - allow SQL operations to be grouped and done as a unit
+
+# Summary
+# relational databases allow us to scale to very large amounts of data
+# the key is to have one copy of any data element and use relations and joins to link the data to multiple places
+# this greatly reduces the amount of data which much be scanned when doing complex operations across large amounts of data
+# database and SQL design is a bit of an art form                                           
