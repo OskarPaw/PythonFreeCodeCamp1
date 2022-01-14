@@ -1553,4 +1553,19 @@ print(xyz)
 # relational databases allow us to scale to very large amounts of data
 # the key is to have one copy of any data element and use relations and joins to link the data to multiple places
 # this greatly reduces the amount of data which much be scanned when doing complex operations across large amounts of data
-# database and SQL design is a bit of an art form                                           
+# database and SQL design is a bit of an art form     
+
+#                                                                                      Retrieving and Visualizing Data
+# multi-step data analysis
+# data source --gather--->  |            visualize
+#                           |         /
+#                      clean/process /
+#                           |       /
+#                              -------> analyze
+
+# GeoData
+# makes a Google Map from user entered data
+# uses the Google Geodata API
+# caches data in a database to avoid rate limiting and allow restarting
+# visualized in a browser using the Google Maps API
+
