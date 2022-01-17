@@ -1569,3 +1569,26 @@ print(xyz)
 # caches data in a database to avoid rate limiting and allow restarting
 # visualized in a browser using the Google Maps API
 
+# Search Engine Architecture
+# web crawling
+# index building
+# searching
+
+# Web Crawler
+# a web crawler is a computer program that browses the World Wide Web in a methodical, automated manner.
+# web crawlers are mainly used to create a copy of all the visited pages for later processing by a search engine that will index the downloaded pages to provide fast searches.
+# retrieve a page
+# kook through the page for links
+# add the links to a list of “to be retrieved” sites
+# repeat
+
+# Web Crawling Policy
+# a selection policy that states which pages to download,
+# a re-visit policy that states when to check for changes to the pages,
+# a politeness policy that states how to avoid overloading Web sites, and
+# a parallelization policy that states how to coordinate distributed Web crawlers
+
+# Search Indexing
+# search engine indexing collects, parses, and stores data to facilitate fast and accurate information retrieval. 
+# the purpose of storing an index is to optimize speed and performance in finding relevant documents for a search query. 
+# without an index, the search engine would scan every document in the corpus, which would require considerable time and computing power. 
