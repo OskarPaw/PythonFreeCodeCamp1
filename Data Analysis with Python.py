@@ -1,9 +1,9 @@
-#                                                                   Data Analysis with Python
+#                                                                          Data Analysis with Python
 # What is Data Analysis
 # a process of inspecting, cleansing, transforming and modeling data with the goal of discovering useful information
 # informing conclusion and supporting decision-making.
 
-# The Data Analysis Process
+#                                                                          The Data Analysis Process
 # Data Extraction ------> Data Cleaning -------------------> Data Wrangling -------------------------> Analysis ------------------------------> Action
 # SQL                    # Missing values and empty data   # Hierarchical Data                      # Exploration                       # Building Machine Learning Models
 # Scrapping              # Data imputation                 # Handling categorical data              # Building statistical models       # Feature Engineering
@@ -74,8 +74,17 @@
 # Increase the revenue by specific % to every sale made in specific country
 # sales.loc[sales['Country'] == 'specific country', 'Revenue'] *= 1.1
 # sales.loc[sales['Country'] == 'specific country', 'Revenue'].head()
-# 5min.
 
+# we can analyze specific column 
+# df['specific_column_aqhdjq'].describe()
+# df['specific_column_aqhdjq'].median()
+# ax = df['specific_column_aqhdjq'].value_counts().plot(kind='bar', figsize=(14,6)) # creacting bar chart
+# ax.set_ylabel('Number of something') # setting name of left side
+
+#                                                                              Selection & Indexing:
+# gets the records of the customer with lastname 
+# df.loc[df['customer_lastname'] == 'HANSEN']
+# 
 
 
 
