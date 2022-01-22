@@ -1,0 +1,15 @@
+#                                                                                  How to use Jupyter Notebooks 
+# Shortcuts 
+# A -> create cell above
+# B -> create cell belove
+# DD -> delete cell
+# ESC ->  switch out editing
+# Enter -> switch to edit mode
+# M -> markdown
+# Y -> Python code
+# ctrl (cmd) + return -> execute current cell and stay
+# shift + return -> execute and go next cell
+# z -> undo
+# x -> cut
+# v -> paste
+# c -> copy
