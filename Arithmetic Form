@@ -1,0 +1,57 @@
+from pytest import main
+from arithmetic_arranger import arithmetic_arranger
+
+print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
+
+
+import re
+from pytest import main
+def arithmetic_arranger(problems, solve=False):
+    if (len(problems) > 5):
+        return "Error: Too many problems."
+
+    first = ""
+    second = ""
+    lines = ""
+    sums = ""
+    strings = ""
+    for problem in problems:
+        if (re.search("[^\s0-9.+-]", problem)):
+          if (re.search("[/]", problem) or re.search("[*]", problem)):
+            return "Error: Operator must be '+' or '-'."
+          return "Error: Numbers must only contain digits."
+
+        firstN = problem.split(" ")[0]
+        operator = problem.split(" ")[1]
+        secondN = problem.split(" ")[2]
+        if (len(firstN) >= 5 or len(secondN) >= 5):
+            return "Error: Numbers cannot be more than four digits."
+        sum = ""
+        if (operator == "+"):
+            sum = str(int(firstN) + int(secondN))
+        elif (operator == "-"):
+            sum = str(int(firstN) - int(secondN))
+        length = max(len(firstN), len(secondN)) + 2
+        top = str(firstN).rjust(length)
+        bottom = operator + str(secondN).rjust(length - 1)
+        line = ""
+        ra = str(sum).rjust(length)
+        for s in range(length):
+            line += "-"
+
+        if problem != problems[-1]:
+            first += top + '    '
+            second += bottom + '    '
+            lines += line + '    '
+            sums += ra + '    '
+        else:
+            first += top
+            second += bottom
+            lines += line
+            sums += ra
+
+    if solve:
+        strings = first + "\n" + second + "\n" + lines + "\n" + sums
+    else:
+        strings = first + "\n" + second + "\n" + lines
+    return strings
