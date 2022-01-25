@@ -1,0 +1,15 @@
+def add_time(start, duration):
+
+ duration = duration.partition(":")
+ duration_h = int(duration[0])
+ duration_m = int(duration[2])
+
+ start = start.partition(":")
+ start_m_x = start[2].partition(":")
+ start_h = int(start[0])
+ start_m = int(start_m_x[0])
+ am_pm = start_m_x[2]
+ am_and_pm_switch = {"AM": "PM", "PM": "AM"}
+
+
+return new_time
