@@ -1,44 +1,50 @@
-def add_time(start, duration, weekday=False):
- days_of_the_week = { "Monday", "Tuesday","Wednesday", "Thursday", "Friday","Saturday","Sunday","Saturday","Sunday"}
- duration = duration.partition(":")
- duration_h = int(duration[0])
- duration_m = int(duration[2])
- days_of_the_week_numeration = { "Monday" : 0, "Tuesday": 1,"Wednesday": 2, "Thursday": 3, "Friday": 4,"Saturday": 5,"Sunday":6}
- 
- start = start.partition(":")
- start_m_x = start[2].partition(":")
- start_h = int(start[0])
- start_m = int(start_m_x[0])
- am_pm = start_m_x[2]
- am_and_pm_switch = {"AM": "PM", "PM": "AM"}
- 
- end_minutes = start_m + duration_m
-  if (end_minutes >= 60):
-    start_h += 1
-    end_minutes = end_minutes % 60
-  number_of_am_pm_swaps = int ((start_h + duration_h) /12 )
-  hours = (start_h + duration_h ) % 12
-  # javasc operator
-  end_minutes = end_minutes if end_minutes > 9 else "0" + str(end_minutes)
-  hours = hours = 12 if hours == 0 else hours
-  days_count = int(duration_h / 24)
-  if (am_pm == "PM" and start_h +(duration_h % 12) >= 12):
-    days_count += 1
+# This entrypoint file to be used in development. Start by reading README.md
+from time_calculator import add_time
+from unittest import main
 
-  am_pm = am_and_pm_switch[am_pm] if number_of_am_pm_swaps % 2 == 1 else am_pm
-  
-  returnFinish = str(hours) + ":" + str(end_minutes) + " " + am_pm
-  if (weekday):
-    weekday = weekday.lower()
-    indexing = int((days_of_the_week_numeration[weekday]) + days_count) % 7
-    newday = days_of_the_week[indexing]
-    returnFinish += ", " + newday
-  
-  if(days_count == 1):
-    return returnFinish + " " + "(next day)"
-  elif (days_count > 1):
-    return returnFinish + " (" + str(days_count) + " days later)"
-  print(returnFinish)
-  return returnFinish
 
-return new_time
+print(add_time("11:06 PM", "2:02"))
+
+
+# Run unit tests automatically
+main(module='test_module', exit=False)
+
+def add_time(start, duration, day = ""):
+    hour = int(start.split()[0].split(":")[0])
+    minute = int(start.split()[0].split(":")[1])
+    time = start.split()[1]
+    
+    days_of_the_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+    passHour = int(duration.split(":")[0])
+    passMinute = int(duration.split(":")[1])
+    passDay = 0
+
+    minute += passMinute
+    hour += passHour + minute//60
+    minute = minute % 60
+
+    while hour >= 12:
+        if time == "AM":
+            hour -= 12
+            time = "PM"
+        else:
+            hour -= 12
+            passDay += 1
+            time = "AM"
+    if hour == 0:
+        hour = 12
+            
+    if day:
+        day = day.casefold().capitalize()
+        day = ", " + days_of_the_week [ (days_of_the_week.index(day) + passDay) % 7 ]
+        
+    new_time = str(hour) + ":" + "0"*(minute<10) + str(minute) + " " + time + day
+    
+    if passDay > 0:
+        if passDay == 1:
+            new_time += " (next day)"
+        else:
+            new_time += " (" + str(passDay) + " days later)"
+
+    return new_time
