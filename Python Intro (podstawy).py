@@ -1,4 +1,4 @@
-          import sys
+import sys
 
 x = 2
 print(x)
@@ -70,8 +70,8 @@ for value in [9, 41, 12, 3, 74, 15] :
     print(count, sum, value)
 print("After", count, sum, sum/count)
 
-#filteting in a loop
- # if something >=< number:
+#                                                                               Filteting in a loop
+# if something >=< number:
 
 print("Before")
 for valu in [9, 41, 12, 3, 74, 15] :
@@ -162,7 +162,7 @@ apple = input("Enter amount of apples :")
 x = int(apple) - 10
 print(x)
 
-#           LOOKING INSIDE STRINGS
+#                                                                               Looking inside strings
 
 fruit = "banana"
 letter = fruit[1] # square bracket chooses a letter in our string ( b-0, a-1, n-2, a-3 etc)
@@ -171,12 +171,12 @@ x = 3
 w = fruit[x - 1]
 print(w) #n
 
-#               GETTING LENGHT IN STRINGS
+#Getting lenght in strings
 
 frui = "banana"
 print(len(frui)) # 6
 
-#               LEN FUNCTION
+#Len function
 frui = "banana"
 x = len(frui)
 print(x) #6
@@ -184,7 +184,7 @@ print(x) #6
 # banana ( a string input) ----> len(function) ----> 6 (a number output)
 # a function is some stored code. A function takes some input and produces an output.
 
-#              LOOPING THROUGH STRINGS
+# Looping through strings
 # by while statement and an iteration variable and the len function, we can construct
 # a loop to look at each of the letters in a string individually
 
@@ -201,7 +201,7 @@ fruit = "banana"
 for letter in fruit:
     print(letter)
 
-#               LOOPING AND COUNTING STRINGS
+#Looping and counting strings
 word = "banana"
 count = 0
 for letter in word:
@@ -209,7 +209,7 @@ for letter in word:
         count = count +1
 print(count)
 
-#               SLICING STRINGS
+#Slicing strings
 #  second number is beyond the end of the slice - ###Up to but not including
 
 s = "Monty Python"
@@ -220,7 +220,7 @@ print(s[:2]) # if we leave off the first number or the last number of the slice
 print(s[8:]) # its assumed to be the beginning or end of the string
 print(s[:])
 
-#               STRING CONCATENATION/ Łączenie stringów
+#String Concatenation/ Łączenie stringów
 
 # when + operator is applied to strings it means concatenation
 a = "Hello"
@@ -230,7 +230,7 @@ print(b) #HelloThere
 c = a + " " + "There"
 print(c) #Hello There
 
-#               USING IN AS A LOGICAL OPERATOR STRING
+# Using in as a logical operator string
 # The in expression is a logical expression that returns True or False and can be used in an if statement
 # The in keyword can also be used to check to see if one string is "in" another string
 
@@ -241,7 +241,7 @@ fruit = "banana"
 if "a" in fruit:
     print("Just found A!")
 
-#                   STRING LIBRARY
+#String library
 # there is a number of string functions which are in the string library
 # these functions are already built into every string - we invoke them by appending the funcion
 # to the string variabe for example : .lower
@@ -257,7 +257,7 @@ print(greet) #Hello Hans
 
 # https://docs.python.org/3/library/stdtypes.html#string-methods all the string fuctions which are built in
 
-                    #SEARCHING A STRING
+#Searching a string
 # find() finds the first occurrence of the substring.String position starts at zero
 # if the substring is not fond , find() returns -1
 
@@ -268,7 +268,7 @@ print(pos) # 2
 aa = fruit.find("z")
 print(aa) # -1 due to not being able to find z letter
 
-#               MAKE EVERYTHING UPPER CASE STRINGS
+#Make everything upper case string
 # you can make a copy of a string in lowe case or upper case
 
 greet = "Hello Hans"
@@ -278,7 +278,7 @@ print(nnn)#HELLO HANS
 www = greet.lower()
 print(www)#hello hans
 
-#                           SEARCH AND REPLACE STRINGS
+#Search and replace strings
 # the replace() function is search and replace operation
 # it replaces all occurrences of the search string with the replacement string
 greet = "Hello  Bob"
@@ -288,7 +288,7 @@ print(nstr) #Hello Hans
 nstr = greet.replace("o","x")
 print(nstr)# Hellx Bxb
 
-#               STRIPPING WHITESPACE
+#                                                                                   Stripping whitespace
 #lstrip() and rstrip() remove whitespace at the left or right
 #strip() removes both beginning and ending whitespace
 greet = "   Hello Bob   "
@@ -296,13 +296,13 @@ greet.lstrip()  #"Hello Bob     "
 greet.rstrip()   #"   Hello Bob"
 greet.strip()   #"Hello Bob"
 
-#               PREFIXES STRINGS
+#                                                                                   Prefixes strings
 
 line = "Please have a nice day"
 line.startswith("Please") #True
 line.startswith("p") #False
 
-#               Parsing and Extracting
+#                                                                                   Parsing and Extracting
 data = "From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008"
 atpos = data.find("@")
 print(atpos) #21
