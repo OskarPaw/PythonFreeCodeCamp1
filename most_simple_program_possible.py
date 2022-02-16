@@ -2,22 +2,54 @@ print("Welcome to my first game!")
 print("Are you ready to play?")
 
 name = input("What is your name? ")
-print(("Good luck on your adventur ") + name +(" !!!"))
+NameLength = len(name)
+if NameLength <= 10:
+    print(("Good luck on your adventur ") + name +(" !!!"))
+elif NameLength >= 10:
+    print("Your name is too long! (MAXIMUM IS 20 CHARACTERS)")
+    name = input("What is your finnal name adventurer ? ")
+    if len(name) <=10:
+        print(("Good luck on your adventur ") + name +(" !!!"))
 
+        
+#age = int(input(f"What is your age {name} ? "))
+while True:
+    try:
+        age = int(input(f"What is your age {name} ? ")) # if /elif/else prob
+        if age in range(18 - 100):
+            print("Thx for typing your correct age! ")
+            break
+        elif age not in range(18):
+            print(age)
+            print("Thx for typing your correct age! ")
+            break
+        else:
+            if age not in range(100):
+                # print(input("Type you're correct age please ! ;) "))
+                print("Its not your correct age !! ")
+                continue
 
-try:
-    age = int(input("What is your age? "))
-    if age in range(0-100):
-        pass
-    if age not in range(0-100):
-        print(input("Type you're correct age please ! ;) "))
-        age = correct_age
-except:
-    pass
+        #correct_age = int(input("It's your last chance to type your correct age ;) "))
+       # if age in range(18-100):
+           # break
+            #if correct_age in range(0-100):
+                #break
+
+    except ValueError:
+        print("It's your last chance to type your correct age!! ")
+        age = int(input("So what is your correct age ? "))
+        print(f"So you are {age} years old , have fun during the game {name} ")
+        if age in range(18-100):
+            print(f"So you are {age} years old , have fun during the game {name} ")
+        break
+        if age not in range(18-100):
+            continue
+
 
 health = 10
 
 if age >= 18:
+#if correct_age >= 18:
     print("You are old enough to play!")
 
     wants_to_play = input("Do you want to play? (yes/no) ").lower()
